@@ -5,10 +5,16 @@
 
 # 빌드 및 실행 방법
 
+## 데이터베이스 생성 및 API 활용
 1. git clone https://github.com/Arkhtyi/EnvironmentProgramsAPI.git
 2. pip install pandas flask sqlalchemy
 3. python calls.py
 4. http://localhost:5005  으로 접속해서 API 활용
+
+## 단위 테스트
+1. git clone https://github.com/Arkhtyi/EnvironmentProgramsAPI.git
+2. pip install flask-testing 
+3. python test-calls.py
 
 
 # 기능 명세 및 각 기능의 문제 해결 전략
@@ -152,6 +158,9 @@
         "keyword": "탐방"
      }
      ```
+     
+## 단위 테스트 (Unit Test) 코드를 개발하여 각 기능을 검증하세요. 
+  * 별도의 테스트용 데이터베이스를 생성하고 파이썬 unittest 기능을 이용해서 기능명세의 각 기능들을 검증했습니다.
      
 # 사용 기술/라이브러리
 
