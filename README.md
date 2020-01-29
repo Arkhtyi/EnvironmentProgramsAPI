@@ -57,7 +57,7 @@
         ```
      * 결과물 예시  
        ![alt text](https://github.com/Arkhtyi/EnvironmentProgramsAPI/blob/master/Readme%20Images/postResult.JPG)
-       추가한 데이터가 데이터베이스에 추가 된 모습
+       추가 요청한 데이터가 데이터베이스에 추가 된 모습
        
   * 수정 기능
    * 수정 기능은 수정할 항목의 id와 데이터를 json 데이터의 형태로 입력하고 /change로 수정을 요청하도록 구현했습니다('PUT' 사용)   
@@ -74,6 +74,6 @@
        }
      ```
      * 결과물 예시  
-        ![alt text](https://github.com/Arkhtyi/EnvironmentProgramsAPI/blob/master/Readme%20Images/postResult.JPG)
-        추가한 데이터가 데이터베이스에 추가 된 모습
+        ![alt text](https://github.com/Arkhtyi/EnvironmentProgramsAPI/blob/master/Readme%20Images/putResult.JPG)
+        수정 요청한 데이터가 데이터베이스에 적용 된 모습
 
