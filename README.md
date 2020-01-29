@@ -154,3 +154,10 @@
      }
      ```
      
+# 사용 기술/라이브러리
+
+* SQLAlchemy
+* Flask
+* Flask-SQLAlchemy
+* Pandas
+* SQLite3
