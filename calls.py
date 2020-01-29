@@ -56,11 +56,13 @@ def update_product(id):
         return ("Change successful")
 
 # 데이터 조회. 입력한 id 번호의 프로그램을 조회한다
-@app.route('/view/<id>', methods=['GET'])
-def view_program(id):
+@app.route('/view', methods=['GET'])
+def view_program():
         s1 = scoped_session(sessionmaker(bind=engine))
         conn = engine.connect()
         query = conn.execute("SELECT * FROM 'Programs'")
+
+        id = request.json['id']
         program = s1.query(Programs).get(id)
 
         result = {}
