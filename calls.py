@@ -3,19 +3,13 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import scoped_session
 from flask import Flask, request, jsonify
 from tabledef import *
-#import initialization 
+from initialization import init_database
 import json
 
 
 app = Flask(__name__)
 
-engine = create_engine('sqlite:///ProgramDatabase.db')
-Base.metadata.create_all(engine)
-
-session = sessionmaker()
-session.configure(bind=engine)
-s = session()
-
+s = init_database()
 
 
 # API 함수들

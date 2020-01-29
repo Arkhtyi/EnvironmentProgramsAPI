@@ -3,7 +3,7 @@ from sqlalchemy import Column, Date, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 
-engine = create_engine('sqlite:///ProgramDatabase.db')
+#ngine = create_engine('sqlite:///ProgramDatabase.db')
 Base = declarative_base()
 
 # 프로그램 클래스 규정
