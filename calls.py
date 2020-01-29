@@ -143,4 +143,4 @@ def get_keywordCount():
 
 
 if __name__ == '__main__':
-     app.run(port=5005)
+        app.run('localhost', 5005)
