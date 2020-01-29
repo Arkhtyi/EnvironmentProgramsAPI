@@ -43,8 +43,7 @@ def init_database(csv=DEFAULT_CSV, database_name=DEFAULT_DB):
         s.rollback() 
     finally:
         s.close() 
-        print ('CSV to Database conversion complete. Any duplicate entries have been ignored')
 
-    return s
+    return (s, engine)
 
 

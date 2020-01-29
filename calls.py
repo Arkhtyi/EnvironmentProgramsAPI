@@ -6,11 +6,16 @@ from tabledef import *
 from initialization import init_database
 import json
 
+DEFAULT_DB = 'sqlite:///ProgramDatabase.db'
+TEST_DB = "sqlite:///TestDB.db"
 
 app = Flask(__name__)
 
-s = init_database()
-
+#단위 테스트시 메인 데이터베이스가 아닌 테스트용 데이터베이스 생성
+s, engine = None, None
+if __name__ != '__main__':
+        s, engine = init_database(database_name=TEST_DB)
+        print ("Initialized testing database")
 
 # API 함수들
 
@@ -106,10 +111,11 @@ def get_region():
 
         result = {}
         programs_list = []
+        region_num = " "
         for regionCode in query1.cursor.fetchall():
-            region_num = regionCode[0]
+                region_num = regionCode[0]
         for program in query.cursor.fetchall(): 
-            programs_list.append({"prgm_name": program[0], "theme": program[1].rstrip(",")})
+                programs_list.append({"prgm_name": program[0], "theme": program[1].rstrip(",")})
 
         result["region"] = region_num
         result["programs"] = programs_list
@@ -150,7 +156,7 @@ def get_keywordCount():
         query = conn.execute("SELECT COUNT(*) FROM 'Programs' WHERE [programDetail] LIKE '%"+keywordInput+"%'")
 
         for program in query.cursor.fetchall():
-            num = program[0]
+                num = program[0]
 
         result["keyword"] = keywordInput
         result["count"] = num
@@ -170,6 +176,9 @@ def delete_program():
 
         return "deleted"
 
+
+
 # flask 서버. 개발용 로컬이기 떄문에 본격적으로 사용시에는 교체할 필요 있음.
 if __name__ == '__main__':
         app.run('localhost', 5005)
+        s, engine = init_database(database_name=DEFAULT_DB)
