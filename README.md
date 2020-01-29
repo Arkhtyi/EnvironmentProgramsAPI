@@ -33,12 +33,12 @@
      * 출력 예시  
          ```
         {
-            "prgm_name": "오대산국립공원 힐링캠프",
-            "programDetail": " 천년의 숲으로 불리는 오대산 전나무숲과 선재길에서 다양한 숲치유 프로그램 체험",
-            "programSummary": "선재길, 한국자생식물원, 전나무숲, 월정사, 방아다리약수",
-            "region": "강원도 평창군 진부면",
-            "regionCode": "undefined",
-            "theme": "숲 치유,"
+          "prgm_name": "오대산국립공원 힐링캠프",
+          "programDetail": " 천년의 숲으로 불리는 오대산 전나무숲과 선재길에서 다양한 숲치유 프로그램 체험",
+          "programSummary": "선재길, 한국자생식물원, 전나무숲, 월정사, 방아다리약수",
+          "region": "강원도 평창군 진부면",
+          "regionCode": "undefined",
+          "theme": "숲 치유,"
         }
          ```
   
@@ -46,14 +46,14 @@
     * 추가 기능은 추가할 데이터를 json 데이터의 형태로 입력하고 /create로 추가를 요청하도록 구현했습니다('POST' 사용)   
      * 입력 예시
         ```
-       {
-        "prgm_name" : "프로그램1",
-        "theme" : "테마1",
-        "region" : "지역1",
-        "programSummary": "프로그램소개1",
-        "programDetail": "프로그램상세1",
-        "regionCode" : "지역코드어딘가"
-       }
+        {
+          "prgm_name" : "프로그램1",
+          "theme" : "테마1",
+          "region" : "지역1",
+          "programSummary": "프로그램소개1",
+          "programDetail": "프로그램상세1",
+          "regionCode" : "지역코드어딘가"
+        }
         ```
      * 결과물 예시  
        ![alt text](https://github.com/Arkhtyi/EnvironmentProgramsAPI/blob/master/Readme%20Images/postResult.JPG)
@@ -63,15 +63,15 @@
     * 수정 기능은 수정할 항목의 id와 데이터를 json 데이터의 형태로 입력하고 /change로 수정을 요청하도록 구현했습니다('PUT' 사용)   
      * 입력 예시
      ```
-       {
-        "id" : 1,
-        "prgm_name" : "수정프로그램1",	  
-        "theme" : "수정테마1",
-        "region" : "수정지역1",
-        "programSummary": "수정프로그램소개1",
-        "programDetail": "수정프로그램상세1",
-        "regionCode" : "수정지역코드어딘가"
-       }
+        {
+          "id" : 1,
+          "prgm_name" : "수정프로그램1",	  
+          "theme" : "수정테마1",
+          "region" : "수정지역1",
+          "programSummary": "수정프로그램소개1",
+          "programDetail": "수정프로그램상세1",
+          "regionCode" : "수정지역코드어딘가"
+        }
      ```
      * 결과물 예시  
         ![alt text](https://github.com/Arkhtyi/EnvironmentProgramsAPI/blob/master/Readme%20Images/putResult.JPG)
