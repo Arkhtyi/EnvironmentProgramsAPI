@@ -33,8 +33,10 @@ def add_new():
         return ("Post successful")
 
 # 데이터 변경
-@app.route("/change/<id>", methods=['PUT'])
-def update_product(id):
+@app.route("/change", methods=['PUT'])
+def update_product():
+
+        id = request.json['id']
         program = s.query(Programs).get(id)
 
         prgm_name = request.json['prgm_name']
