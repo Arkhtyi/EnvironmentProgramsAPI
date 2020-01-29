@@ -7,12 +7,10 @@ from initialization import *
 import json
 
 
-# DB와 연결
 app = Flask(__name__)
-engine = create_engine('sqlite:///ProgramDatabase.db')
-session = sessionmaker()
-session.configure(bind=engine)
-s = session()
+
+
+# API 함수들
 
 # 데이터 추가 
 @app.route("/create", methods=['POST'])
@@ -30,7 +28,15 @@ def add_new():
         s.add(new_program)
         s.commit()
 
-        return ("Post successful")
+        result = {}
+        result["prgm_name"] = prgm_name
+        result["theme"] = theme
+        result["region"] = region
+        result["programSummary"] = programSummary
+        result["programDetail"] = programDetail
+        result["regionCode"] = regionCode
+
+        return jsonify(result)
 
 # 데이터 변경
 @app.route("/change", methods=['PUT'])
@@ -55,7 +61,15 @@ def update_product():
 
         s.commit()
 
-        return ("Change successful")
+        result = {}
+        result["prgm_name"] = prgm_name
+        result["theme"] = theme
+        result["region"] = region
+        result["programSummary"] = programSummary
+        result["programDetail"] = programDetail
+        result["regionCode"] = regionCode
+
+        return jsonify(result)
 
 # 데이터 조회. 입력한 id 번호의 프로그램을 조회한다
 @app.route('/view', methods=['GET'])
@@ -141,6 +155,19 @@ def get_keywordCount():
 
         return jsonify(result)
 
+# 입력한 id번호에 대응되는 프로그램을 삭제. 기능명세서에 요구되지 않았지만 구현함
+@app.route('/delete', methods=['DELETE'])
+def delete_program():
 
+        id = request.json['id']
+
+        program = s.query(Programs).get(id)
+
+        s.delete(program)
+        s.commit()
+
+        return "deleted"
+
+# flask 서버. 개발용 로컬이기 떄문에 본격적으로 사용시에는 교체할 필요 있음.
 if __name__ == '__main__':
         app.run('localhost', 5005)
