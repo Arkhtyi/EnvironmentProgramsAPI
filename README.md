@@ -8,7 +8,7 @@
 1. git clone https://github.com/Arkhtyi/EnvironmentProgramsAPI.git
 2. pip install pandas flask sqlalchemy
 3. python calls.py
-4. http://127.0.0.1:5005/ 으로 접속해서 API 활용
+4. http://localhost:5005  으로 접속해서 API 활용
 
 
 # 기능 명세 및 각 기능의 문제 해결 전략
