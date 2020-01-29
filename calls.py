@@ -79,8 +79,11 @@ def view_program():
         return jsonify(result)
 
 # 입력한 지역에서 일어나는 프로그램명과 테마 표시
-@app.route('/region/<regionInput>', methods=['GET'])
-def get_region(regionInput):
+@app.route('/region', methods=['GET'])
+def get_region():
+
+        regionInput = request.json['region']
+
         conn = engine.connect() # connect to database
         query = conn.execute("SELECT [prgm_name],[theme] FROM 'Programs' WHERE [region] LIKE '%"+regionInput+"%'")
         query1 = conn.execute("SELECT regionCode FROM 'Programs' WHERE [region] LIKE '%"+regionInput+"%'")
@@ -98,8 +101,11 @@ def get_region(regionInput):
         return jsonify(result)
 
 # 입력한 문자열이 프로그램 소개에 언급되는 서비스 지역과 개수를 표시
-@app.route('/keyword1/<keywordInput>', methods=['GET'])
-def get_regionNums(keywordInput):
+@app.route('/keyword1', methods=['GET'])
+def get_regionNums():
+
+        keywordInput = request.json['keyword']
+
         result = {}
         conn = engine.connect() # connect to database
         count = {}
@@ -118,8 +124,11 @@ def get_regionNums(keywordInput):
         return jsonify(result)
 
 # 입력한 문자열이 프로그램 상세 정보에서 출현하는 빈도수 표시
-@app.route('/keyword2/<keywordInput>', methods=['GET'])
-def get_keywordCount(keywordInput):
+@app.route('/keyword2', methods=['GET'])
+def get_keywordCount():
+
+        keywordInput = request.json['keyword']
+
         result = {}
         conn = engine.connect() # connect to database
         query = conn.execute("SELECT COUNT(*) FROM 'Programs' WHERE [programDetail] LIKE '%"+keywordInput+"%'")
