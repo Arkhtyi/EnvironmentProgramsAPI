@@ -7,9 +7,8 @@
 
 1. git clone https://github.com/Arkhtyi/EnvironmentProgramsAPI.git
 2. pip install pandas flask sqlalchemy
-3. python initialization.py (데이터베이스 파일인 ProgramDatabase.db를 최초로 생성합니다. 이후 다시 실행할 필요 없음)
-4. python calls.py
-5. http://127.0.0.1:5005/ 으로 접속해서 API 활용
+3. python calls.py
+4. http://127.0.0.1:5005/ 으로 접속해서 API 활용
 
 
 # 기능 명세 및 각 기능의 문제 해결 전략
